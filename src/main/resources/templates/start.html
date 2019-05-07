@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ВЫБОР РАЗМЕРОВ ОГНЕГАСЯЩИХ КАНАЛОВ ОГНЕПРЕГРАДИТЕЛЕЙ</title>
+</head>
+<body>
+<h1>ВЫБОР РАЗМЕРОВ ОГНЕГАСЯЩИХ КАНАЛОВ ОГНЕПРЕГРАДИТЕЛЕЙ</h1>
+<h2>Критический диаметр канала огнепреграждающего элемента для сбросных огнепреградителей на резервуарах
+    определяется выражением
+    d < 32,5*R*T*λ/Su*Cp*p</h2>
+<form action="/start" method="post">
+    <ul>
+        <li><input name="R" value="8.3144598" type="number"> R — универсальная газовая постоянная;</li>
+        <li><input th:value="${t}" name="T" type="number"> Т— начальная температура газовой горючей смеси. К;</li>
+        <li><input th:value="${lambda}" name="λ" type="number"> λ — теплопроводность горючей смеси, Вт/(мК);</li>
+        <li><input th:value="${su}" name="Su" type="number"> Su — нормальная скорость распространения пламени, м/с;</li>
+        <li><input th:value="${cp}" name="Cp" type="number"> Сp — теплоемкость газовой горючей смеси при постоянном
+            давлении, Дж/(кг · К);
+        </li>
+        <li><input th:value="${p}" name="p" type="number"> р — давление горючей смеси. Па.</li>
+    </ul>
+    <p>
+        <output th:text="${res}"></output>
+    </p>
+    <p>
+        <button>Посчитать</button>
+    </p>
+
+
+</form>
+</body>
+</html>
